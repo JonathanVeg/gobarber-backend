@@ -47,6 +47,18 @@ class ScheduleController {
               attributes: ['id', 'path', 'url'],
             }
           ],
+        },
+        {
+          model: User,
+          as: 'user',
+          attributes: ['id', 'name'],
+          include: [
+            {
+              model: File,
+              as: 'avatar',
+              attributes: ['id', 'path', 'url'],
+            }
+          ],
         }
       ],
       attributes: ['id', 'date'],

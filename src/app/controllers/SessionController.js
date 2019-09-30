@@ -32,7 +32,7 @@ class SessionController {
     if (!user) return res.status(401).json({ message: 'User not found', });
 
     if (!(await user.checkPassword(password))) {
-      return res.status(401).json({ message: 'Password not match', });
+      res.status(401).json({ message: 'Password not match', });
     }
 
     const {
